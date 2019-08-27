@@ -9,7 +9,10 @@ The solution has a few different tests for the POST method. As there are no spec
 2. Test that sends an incorrect payload and verifies a return status code 200. I would have expected a different status code for an incorrect payload.
 3. Test that sends an empty payload and verifies a return status code 200. I would have expected a different status code for an empty payload.
 4. Test that sends the payload but as a different content type and checks for 200.
-5. Test that sends the payload to a wrong endpoint and verifying that it gets back 400 status code.
+5. Test that sends the payload to a wrong endpoint and verifying that it gets back 404 status code.
 
 To check the results, I used Postman app and did a GET request to see if the entries have been added as a results of POST requests and noticed that the IDs that are being given after the POST request is made are not unique, which should not happen in a correct specification of an API
 
+Things I would have done if had more time:
+1. Create a @Before method to declare the baseURI
+2. Refactor the tests to have a separate method that does the call, with parameters: contentType, payload and api. 
